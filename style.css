@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 15fr;
+}
+
+.header {
+  grid-row-start: 1;
+  background: cornflowerblue;
+  text-align: center;
+  font-size: 50px;
+}
+
+.booklist {
+  grid-row-start: 2;
+}
