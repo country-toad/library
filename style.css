@@ -15,4 +15,11 @@
 .library {
   grid-row-start: 2;
   display: flex;
+  gap: 10px;
+}
+
+.bookcontainer {
+  background-color: aqua;
+  height: 100px;
+  width: 50px;
 }

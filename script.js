@@ -21,14 +21,29 @@ function addBooktoLibrary(title, author, pages, isRead) {
 
 function listLibraryBooks() {
   const libraryDiv = document.querySelector(".library");
-  const bookDiv = document.createElement("div");
-  bookDiv.className = "bookcontainer";
-  for (book in myLibrary) {
-    console.log(myLibrary[book]);
+  myLibrary.forEach((book) => {
+    const bookDiv = document.createElement("div");
+    bookDiv.classList.add("bookcontainer");
     libraryDiv.appendChild(bookDiv);
-  }
+
+    const bookTitle = document.createElement("div");
+    bookTitle.textContent = book.title;
+    bookDiv.appendChild(bookTitle);
+
+    const bookAuthor = document.createElement("div");
+    bookAuthor.textContent = book.author;
+    bookDiv.appendChild(bookAuthor);
+
+    const bookPages = document.createElement("div");
+    bookPages.textContent = book.pages;
+    bookDiv.appendChild(bookPages);
+
+    const bookIsRead = document.createElement("div");
+    bookIsRead.textContent = book.isRead;
+    bookDiv.appendChild(bookIsRead);
+  });
 }
 
-addBooktoLibrary("book1", "author", "20", true);
-addBooktoLibrary("book2", "author", "30", false);
+addBooktoLibrary("book1", "ray", "20", true);
+addBooktoLibrary("book2", "fig", "30", false);
 listLibraryBooks();
