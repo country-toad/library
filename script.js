@@ -20,8 +20,12 @@ function addBooktoLibrary(title, author, pages, isRead) {
 }
 
 function listLibraryBooks() {
+  const libraryDiv = document.querySelector(".library");
+  const bookDiv = document.createElement("div");
+  bookDiv.className = "bookcontainer";
   for (book in myLibrary) {
     console.log(myLibrary[book]);
+    libraryDiv.appendChild(bookDiv);
   }
 }
 
