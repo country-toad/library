@@ -46,4 +46,14 @@ function listLibraryBooks() {
 
 addBooktoLibrary("book1", "ray", "20", true);
 addBooktoLibrary("book2", "fig", "30", false);
+addBooktoLibrary("book1", "ray", "20", true);
+addBooktoLibrary("book2", "fig", "30", false);
+addBooktoLibrary("book1", "ray", "20", true);
+addBooktoLibrary("book2", "fig", "30", false);
+addBooktoLibrary("book1", "ray", "20", true);
+addBooktoLibrary("book2", "fig", "30", false);
+addBooktoLibrary("book1", "ray", "20", true);
+addBooktoLibrary("book2", "fig", "30", false);
+addBooktoLibrary("book1", "ray", "20", true);
+addBooktoLibrary("book2", "fig", "30", false);
 listLibraryBooks();

@@ -1,6 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   display: grid;
-  height: 100vh;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 15fr;
 }
@@ -13,13 +17,17 @@
 }
 
 .library {
+  margin-left: 10px;
   grid-row-start: 2;
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 15px;
 }
 
 .bookcontainer {
   background-color: aqua;
-  height: 100px;
-  width: 50px;
+  height: 200px;
+  width: 150px;
 }
