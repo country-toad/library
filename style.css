@@ -39,7 +39,6 @@
   display: flex;
   flex-flow: column;
   background-color: #3e8e41;
-  border-radius: 4px;
 }
 
 button {
@@ -61,9 +60,12 @@ button:active {
   background-color: #1e4825;
 }
 
-input[type="text"] {
+#title,
+#author,
+#pages {
   display: block;
   height: 25px;
+  width: 80%;
   border-radius: 8px;
   -webkit-appearance: none;
   appearance: none;
