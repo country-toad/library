@@ -75,3 +75,9 @@ button:active {
   font-family: space;
   border-bottom: 3px solid rgba(0, 0, 0, 0%);
 }
+
+#title:invalid,
+#author:invalid,
+#pages:invalid {
+  border-color: red;
+}
