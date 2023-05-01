@@ -50,13 +50,13 @@ function listLibraryBooks() {
 
 addBooktoLibrary("book1", "ray", "20", true);
 
-const addBookButton = document.querySelector(".addbook");
+const addBookButton = document.querySelector(".bookbtn");
 addBookButton.addEventListener("click", function () {
-  const title = "title";
-  const author = "beans";
-  const pages = "69";
-  const read = true;
-  addBooktoLibrary(title, author, pages, read);
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const pages = document.querySelector("#pages");
+  const isread = document.querySelector("#isread");
+  addBooktoLibrary(title.value, author.value, pages.value, isread.checked);
   listLibraryBooks();
 });
 

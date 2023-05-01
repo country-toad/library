@@ -64,7 +64,6 @@ button:active {
 input[type="text"] {
   display: block;
   height: 25px;
-  width: 20vw;
   border-radius: 8px;
   -webkit-appearance: none;
   appearance: none;
