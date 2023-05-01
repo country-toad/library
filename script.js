@@ -13,6 +13,7 @@ function Book(title, author, pages, isRead) {
 }
 
 let myLibrary = [];
+let listedLibrary = [];
 
 function addBooktoLibrary(title, author, pages, isRead) {
   const currentBook = new Book(title, author, pages, isRead);
@@ -41,19 +42,22 @@ function listLibraryBooks() {
     const bookIsRead = document.createElement("div");
     bookIsRead.textContent = book.isRead;
     bookDiv.appendChild(bookIsRead);
+
+    listedLibrary.push(myLibrary[book]);
   });
+  myLibrary = [];
 }
 
 addBooktoLibrary("book1", "ray", "20", true);
-addBooktoLibrary("book2", "fig", "30", false);
-addBooktoLibrary("book1", "ray", "20", true);
-addBooktoLibrary("book2", "fig", "30", false);
-addBooktoLibrary("book1", "ray", "20", true);
-addBooktoLibrary("book2", "fig", "30", false);
-addBooktoLibrary("book1", "ray", "20", true);
-addBooktoLibrary("book2", "fig", "30", false);
-addBooktoLibrary("book1", "ray", "20", true);
-addBooktoLibrary("book2", "fig", "30", false);
-addBooktoLibrary("book1", "ray", "20", true);
-addBooktoLibrary("book2", "fig", "30", false);
+
+const addBookButton = document.querySelector(".addbook");
+addBookButton.addEventListener("click", function () {
+  const title = "title";
+  const author = "beans";
+  const pages = "69";
+  const read = true;
+  addBooktoLibrary(title, author, pages, read);
+  listLibraryBooks();
+});
+
 listLibraryBooks();
