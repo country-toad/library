@@ -81,3 +81,7 @@ button:active {
 #pages:invalid {
   border-color: red;
 }
+
+fieldset {
+  border: 0;
+}

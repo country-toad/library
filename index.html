@@ -12,24 +12,26 @@
     <div class="container">
       <div class="header">Books</div>
       <div class="library">
-        <div class="newbook">
-          <label for="title">Title:</label>
-          <input type="text" id="title" placeholder="Title" required />
-          <label for="title">Author:</label>
-          <input type="text" id="author" placeholder="Author" required />
-          <label for="title">Pages:</label>
-          <input
-            type="tel"
-            id="pages"
-            placeholder="Pages"
-            required
-            pattern="^[0-9]*$"
-          />
-          <label for="checkbox">
-            <input type="checkbox" id="isread" />Read?
-          </label>
-          <button type="submit" class="bookbtn">ADD BOOK</button>
-        </div>
+        <form action="./index.html" method="post">
+          <fieldset class="newbook">
+            <label for="title">Title:</label>
+            <input type="text" id="title" placeholder="Title" required />
+            <label for="title">Author:</label>
+            <input type="text" id="author" placeholder="Author" required />
+            <label for="title">Pages:</label>
+            <input
+              type="tel"
+              id="pages"
+              placeholder="Pages"
+              required
+              pattern="^[0-9]*$"
+            />
+            <label for="checkbox">
+              <input type="checkbox" id="isread" />Read?
+            </label>
+            <button type="submit" class="bookbtn">ADD BOOK</button>
+          </fieldset>
+        </form>
       </div>
     </div>
   </body>
