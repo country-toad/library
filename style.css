@@ -8,14 +8,23 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 15fr;
-  /* background: rgb(77, 77, 77); */
+  background: rgb(77, 77, 77);
 }
 
 .header {
+  display: flex;
+}
+
+.new-book-btn {
+  background-color: rgb(163, 191, 245);
+}
+
+.title {
   grid-row-start: 1;
   background: cornflowerblue;
   text-align: center;
   font-size: 50px;
+  flex-grow: 1;
 }
 
 .library {
@@ -59,7 +68,7 @@
   z-index: 2;
 }
 
-button {
+.bookbtn {
   background-color: #4caf50;
   border: none;
   color: white;
@@ -70,11 +79,11 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+.bookbtn:hover {
   background-color: #3e8e41;
 }
 
-button:active {
+.bookbtn:active {
   background-color: #1e4825;
 }
 

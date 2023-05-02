@@ -13,7 +13,6 @@ function Book(title, author, pages, isRead) {
 }
 
 let myLibrary = [];
-let listedLibrary = [];
 
 function addBooktoLibrary(title, author, pages, isRead) {
   const currentBook = new Book(title, author, pages, isRead);
