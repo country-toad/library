@@ -34,19 +34,19 @@ function listLibraryBooks() {
     bookDiv.classList.add("book-container");
     libraryDiv.appendChild(bookDiv);
 
-    const bookTitle = document.createElement("div");
+    const bookTitle = document.createElement("p");
     bookTitle.textContent = book.title;
     bookDiv.appendChild(bookTitle);
 
-    const bookAuthor = document.createElement("div");
+    const bookAuthor = document.createElement("p");
     bookAuthor.textContent = book.author;
     bookDiv.appendChild(bookAuthor);
 
-    const bookPages = document.createElement("div");
+    const bookPages = document.createElement("p");
     bookPages.textContent = book.pages;
     bookDiv.appendChild(bookPages);
 
-    const bookIsRead = document.createElement("div");
+    const bookIsRead = document.createElement("p");
     bookIsRead.textContent = book.isRead;
     bookDiv.appendChild(bookIsRead);
   });
@@ -54,18 +54,28 @@ function listLibraryBooks() {
 
 addBooktoLibrary("book1", "ray", "20", true);
 
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+const isread = document.querySelector("#isread");
 const addBookButton = document.querySelector(".bookbtn");
+
 addBookButton.addEventListener("click", (e) => {
-  const title = document.querySelector("#title");
-  const author = document.querySelector("#author");
-  const pages = document.querySelector("#pages");
-  const isread = document.querySelector("#isread");
-  addBooktoLibrary(title.value, author.value, pages.value, isread.checked);
   e.preventDefault(); // Prevents button from trying to send form to a server
-  listLibraryBooks();
+  if (inputIsValid()) {
+    addBooktoLibrary(title.value, author.value, pages.value, isread.checked);
+    listLibraryBooks();
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    isread.checked = false;
+    disableOverlay();
+  }
 });
 
-listLibraryBooks();
+function inputIsValid() {
+  return title.validity.valid && author.validity.valid && pages.validity.valid;
+}
 
 overlayElement = document.querySelector(".overlay");
 
@@ -81,5 +91,7 @@ overlayElement.addEventListener("dblclick", disableOverlay);
 const formElement = document.querySelector("form");
 formElement.addEventListener("dblclick", (e) => e.stopPropagation()); // Stops double-clicks on the input form from disabling overlay.
 
-const newBookElement = document.querySelector(".new-book-btn");
+const newBookElement = document.querySelector(".overlay-btn");
 newBookElement.addEventListener("click", enableOverlay);
+
+listLibraryBooks();

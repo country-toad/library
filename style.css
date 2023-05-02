@@ -15,7 +15,7 @@
   display: flex;
 }
 
-.new-book-btn {
+.overlay-btn {
   background-color: rgb(163, 191, 245);
 }
 
@@ -107,4 +107,10 @@
 #author:invalid,
 #pages:invalid {
   border-color: red;
+}
+
+#title:valid,
+#author:valid,
+#pages:valid {
+  border-color: rgb(63, 137, 247);
 }
