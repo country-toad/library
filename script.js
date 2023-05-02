@@ -80,4 +80,4 @@ function disableOverlay() {
 
 overlayElement.addEventListener("dblclick", disableOverlay);
 const formElement = document.querySelector("form");
-formElement.addEventListener("dblclick", (e) => e.stopPropagation());
+formElement.addEventListener("dblclick", (e) => e.stopPropagation()); // Stops double-clicks on the input form from disabling overlay.
