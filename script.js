@@ -70,7 +70,7 @@ listLibraryBooks();
 overlayElement = document.querySelector(".overlay");
 
 function enableOverlay() {
-  overlayElement.style.display = "block";
+  overlayElement.style.display = "flex";
 }
 
 function disableOverlay() {
@@ -80,3 +80,6 @@ function disableOverlay() {
 overlayElement.addEventListener("dblclick", disableOverlay);
 const formElement = document.querySelector("form");
 formElement.addEventListener("dblclick", (e) => e.stopPropagation()); // Stops double-clicks on the input form from disabling overlay.
+
+const newBookElement = document.querySelector(".new-book-btn");
+newBookElement.addEventListener("click", enableOverlay);

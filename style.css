@@ -39,7 +39,7 @@
 
 .overlay {
   position: fixed; /* Sit on top of the page content */
-  display: block; /* Hidden by default */
+  display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   top: 0;
@@ -47,7 +47,6 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -66,6 +65,7 @@
   background-color: #525270;
   color: white;
   z-index: 2;
+  border: 0;
 }
 
 .bookbtn {
@@ -107,8 +107,4 @@
 #author:invalid,
 #pages:invalid {
   border-color: red;
-}
-
-fieldset {
-  border: 0;
 }
