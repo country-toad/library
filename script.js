@@ -19,8 +19,9 @@ function addBooktoLibrary(title, author, pages, isRead) {
   const currentBook = new Book(title, author, pages, isRead);
   myLibrary.push(currentBook);
 }
-
+// Loops through library arr and displays the values of each book
 function listLibraryBooks() {
+  // If library element exists, remove it
   if (document.querySelector(".library") !== null) {
     document.querySelector(".library").remove();
   }
@@ -31,7 +32,7 @@ function listLibraryBooks() {
 
   myLibrary.forEach((book) => {
     const bookDiv = document.createElement("div");
-    bookDiv.classList.add("bookcontainer");
+    bookDiv.classList.add("book-container");
     libraryDiv.appendChild(bookDiv);
 
     const bookTitle = document.createElement("div");
@@ -61,8 +62,22 @@ addBookButton.addEventListener("click", (e) => {
   const pages = document.querySelector("#pages");
   const isread = document.querySelector("#isread");
   addBooktoLibrary(title.value, author.value, pages.value, isread.checked);
-  e.preventDefault();
+  e.preventDefault(); // Prevents button from trying to send form to a server
   listLibraryBooks();
 });
 
 listLibraryBooks();
+
+overlayElement = document.querySelector(".overlay");
+
+function enableOverlay() {
+  overlayElement.style.display = "block";
+}
+
+function disableOverlay() {
+  overlayElement.style.display = "none";
+}
+
+overlayElement.addEventListener("dblclick", disableOverlay);
+const formElement = document.querySelector("form");
+formElement.addEventListener("dblclick", (e) => e.stopPropagation());

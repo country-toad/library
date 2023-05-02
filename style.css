@@ -7,7 +7,8 @@
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr 15fr;
+  grid-template-rows: 1fr 15fr;
+  /* background: rgb(77, 77, 77); */
 }
 
 .header {
@@ -17,13 +18,9 @@
   font-size: 50px;
 }
 
-.formcontainer {
-  grid-row-start: 2;
-}
-
 .library {
   margin: 10px;
-  grid-row-start: 3;
+  grid-row-start: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -31,18 +28,35 @@
   gap: 15px;
 }
 
-.bookcontainer {
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: block; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.book-container {
   background-color: aqua;
   height: 200px;
   width: 150px;
 }
 
-.newbook {
-  height: 200px;
-  width: 150px;
+.new-book-form {
+  padding: 50px 250px;
   display: flex;
   flex-flow: column;
-  background-color: #3e8e41;
+  background-color: #525270;
+  color: white;
+  z-index: 2;
 }
 
 button {
