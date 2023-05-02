@@ -21,7 +21,14 @@ function addBooktoLibrary(title, author, pages, isRead) {
 }
 
 function listLibraryBooks() {
-  const libraryDiv = document.querySelector(".library");
+  if (document.querySelector(".library") !== null) {
+    document.querySelector(".library").remove();
+  }
+  const libraryDiv = document.createElement("div");
+  libraryDiv.classList.add("library");
+  const containerDiv = document.querySelector(".container");
+  containerDiv.appendChild(libraryDiv);
+
   myLibrary.forEach((book) => {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("bookcontainer");
@@ -42,21 +49,19 @@ function listLibraryBooks() {
     const bookIsRead = document.createElement("div");
     bookIsRead.textContent = book.isRead;
     bookDiv.appendChild(bookIsRead);
-
-    listedLibrary.push(myLibrary[book]);
   });
-  myLibrary = [];
 }
 
 addBooktoLibrary("book1", "ray", "20", true);
 
 const addBookButton = document.querySelector(".bookbtn");
-addBookButton.addEventListener("click", function () {
+addBookButton.addEventListener("click", (e) => {
   const title = document.querySelector("#title");
   const author = document.querySelector("#author");
   const pages = document.querySelector("#pages");
   const isread = document.querySelector("#isread");
   addBooktoLibrary(title.value, author.value, pages.value, isread.checked);
+  e.preventDefault();
   listLibraryBooks();
 });
 
