@@ -83,6 +83,7 @@ function inputIsValid() {
 }
 
 function showError() {
+  resetErrors();
   if (title.validity.valueMissing) {
     titleError.textContent = "Please enter a value.";
   }
@@ -98,10 +99,14 @@ function resetForm() {
   title.value = "";
   author.value = "";
   pages.value = "";
+  isread.checked = false;
+  resetErrors();
+}
+
+function resetErrors() {
   titleError.textContent = "";
   authorError.textContent = "";
   pagesError.textContent = "";
-  isread.checked = false;
 }
 
 function enableOverlay() {
