@@ -20,6 +20,7 @@ const pages = document.querySelector("#pages");
 const isread = document.querySelector("#isread");
 const addBookButton = document.querySelector(".bookbtn");
 const openFormButton = document.querySelector(".open-form");
+const closeFormButton = document.querySelector(".close-form");
 const overlayElement = document.querySelector(".overlay");
 const titleError = document.querySelector("#title + span.error");
 const authorError = document.querySelector("#author + span.error");
@@ -118,6 +119,7 @@ function disableOverlay() {
 }
 
 overlayElement.addEventListener("dblclick", disableOverlay);
+closeFormButton.addEventListener("click", disableOverlay);
 openFormButton.addEventListener("click", enableOverlay);
 // Stops double-clicks on the input form from disabling overlay.
 document

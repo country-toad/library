@@ -99,8 +99,8 @@
   font-family: recoleta;
 }
 
-.bookbtn {
-  background-color: #4caf50;
+.bookbtn,
+.close-form {
   border: none;
   color: white;
   text-align: center;
@@ -108,15 +108,25 @@
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .bookbtn:hover {
-  background-color: #3e8e41;
+  background-color: rgba(76, 175, 80, 75%);
 }
 
+.bookbtn,
 .bookbtn:active {
-  background-color: #1e4825;
+  background-color: rgb(76, 175, 80);
+}
+
+.close-form:hover {
+  background-color: rgba(204, 13, 13, 0.75);
+}
+
+.close-form,
+.close-form:active {
+  background-color: rgb(204, 13, 13);
 }
 
 #title,
@@ -132,7 +142,6 @@
   border: none;
   background-color: rgb(250, 250, 250);
   border-bottom: 3px solid rgba(0, 0, 0, 0%);
-  margin-bottom: 10px;
 }
 
 #title:invalid,
@@ -150,12 +159,11 @@
 .error {
   width: 100%;
   padding: 0;
-
   font-size: 80%;
   color: white;
   background-color: #900;
   border-radius: 0 0 5px 5px;
-
+  margin-bottom: 8px;
   box-sizing: border-box;
 }
 
