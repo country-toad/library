@@ -65,10 +65,7 @@ addBookButton.addEventListener("click", (e) => {
   if (inputIsValid()) {
     addBooktoLibrary(title.value, author.value, pages.value, isread.checked);
     listLibraryBooks();
-    title.value = "";
-    author.value = "";
-    pages.value = "";
-    isread.checked = false;
+    resetForm();
     disableOverlay();
   }
 });
@@ -95,6 +92,16 @@ function showError() {
   if (pages.validity.valueMissing) {
     pagesError.textContent = "Please enter a value.";
   }
+}
+
+function resetForm() {
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  titleError.textContent = "";
+  authorError.textContent = "";
+  pagesError.textContent = "";
+  isread.checked = false;
 }
 
 overlayElement = document.querySelector(".overlay");
