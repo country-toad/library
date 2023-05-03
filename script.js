@@ -12,8 +12,20 @@ function Book(title, author, pages, isRead) {
   };
 }
 
+/*  Variables  */
 let myLibrary = [];
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+const isread = document.querySelector("#isread");
+const addBookButton = document.querySelector(".bookbtn");
+const openFormButton = document.querySelector(".open-form");
+const overlayElement = document.querySelector(".overlay");
+const titleError = document.querySelector("#title + span.error");
+const authorError = document.querySelector("#author + span.error");
+const pagesError = document.querySelector("#pages + span.error");
 
+/*  Functions  */
 function addBooktoLibrary(title, author, pages, isRead) {
   const currentBook = new Book(title, author, pages, isRead);
   myLibrary.push(currentBook);
@@ -52,14 +64,6 @@ function listLibraryBooks() {
   });
 }
 
-addBooktoLibrary("book1", "ray", "20", true);
-
-const title = document.querySelector("#title");
-const author = document.querySelector("#author");
-const pages = document.querySelector("#pages");
-const isread = document.querySelector("#isread");
-const addBookButton = document.querySelector(".bookbtn");
-
 addBookButton.addEventListener("click", (e) => {
   e.preventDefault(); // Prevents button from trying to send form to a server
   if (inputIsValid()) {
@@ -69,10 +73,6 @@ addBookButton.addEventListener("click", (e) => {
     disableOverlay();
   }
 });
-
-const titleError = document.querySelector("#title + span.error");
-const authorError = document.querySelector("#author + span.error");
-const pagesError = document.querySelector("#pages + span.error");
 
 function inputIsValid() {
   if (title.validity.valid && author.validity.valid && pages.validity.valid) {
@@ -104,8 +104,6 @@ function resetForm() {
   isread.checked = false;
 }
 
-overlayElement = document.querySelector(".overlay");
-
 function enableOverlay() {
   overlayElement.style.display = "flex";
 }
@@ -115,10 +113,8 @@ function disableOverlay() {
 }
 
 overlayElement.addEventListener("dblclick", disableOverlay);
-const formElement = document.querySelector("form");
-formElement.addEventListener("dblclick", (e) => e.stopPropagation()); // Stops double-clicks on the input form from disabling overlay.
-
-const newBookElement = document.querySelector(".overlay-btn");
-newBookElement.addEventListener("click", enableOverlay);
-
-listLibraryBooks();
+openFormButton.addEventListener("click", enableOverlay);
+// Stops double-clicks on the input form from disabling overlay.
+document
+  .querySelector("form")
+  .addEventListener("dblclick", (e) => e.stopPropagation());

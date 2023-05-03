@@ -15,7 +15,7 @@
   display: flex;
 }
 
-.overlay-btn {
+.open-form {
   background-color: rgb(163, 191, 245);
 }
 
@@ -106,7 +106,7 @@
 #title:invalid,
 #author:invalid,
 #pages:invalid {
-  border-color: red;
+  border-color: rgb(236, 172, 52);
 }
 
 #title:valid,
