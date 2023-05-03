@@ -73,8 +73,28 @@ addBookButton.addEventListener("click", (e) => {
   }
 });
 
+const titleError = document.querySelector("#title + span.error");
+const authorError = document.querySelector("#author + span.error");
+const pagesError = document.querySelector("#pages + span.error");
+
 function inputIsValid() {
-  return title.validity.valid && author.validity.valid && pages.validity.valid;
+  if (title.validity.valid && author.validity.valid && pages.validity.valid) {
+    return true;
+  } else {
+    showError();
+  }
+}
+
+function showError() {
+  if (title.validity.valueMissing) {
+    titleError.textContent = "Please enter a value.";
+  }
+  if (author.validity.valueMissing) {
+    authorError.textContent = "Please enter a value.";
+  }
+  if (pages.validity.valueMissing) {
+    pagesError.textContent = "Please enter a value.";
+  }
 }
 
 overlayElement = document.querySelector(".overlay");
