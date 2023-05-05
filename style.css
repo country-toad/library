@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --system-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 @font-face {
   font-family: recoleta;
   src: url(fonts/Recoleta-RegularDEMO.otf);
@@ -87,7 +92,7 @@
 }
 
 .new-book-form {
-  padding: 50px 250px;
+  padding: 50px 90px;
   display: flex;
   flex-flow: column;
   background-color: rgb(112, 66, 20);
@@ -109,6 +114,7 @@
   cursor: pointer;
   border-radius: 5px;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 .bookbtn:hover {
@@ -142,6 +148,7 @@
   border: none;
   background-color: rgb(250, 250, 250);
   border-bottom: 3px solid rgba(0, 0, 0, 0%);
+  font-family: var(--system-font);
 }
 
 #title:invalid,
@@ -165,10 +172,23 @@
   border-radius: 0 0 5px 5px;
   margin-bottom: 8px;
   box-sizing: border-box;
+  font-family: var(--system-font);
 }
 
 .error.active {
   padding: 0.3em;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label[for="isread"] {
+  cursor: pointer;
+  padding: 0 5px;
 }
 
 input[type="checkbox"] {
@@ -178,8 +198,20 @@ input[type="checkbox"] {
   background: white;
   border-radius: 5px;
   border: 2px solid #555;
+  cursor: pointer;
 }
 
 input[type="checkbox"]:checked {
   background-color: #abd;
+}
+
+.checkmark::after {
+  content: "X";
+  position: relative;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  left: 20px;
+  pointer-events: none;
 }

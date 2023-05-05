@@ -21,7 +21,11 @@
           <label for="title">Pages:</label>
           <input type="number" id="pages" placeholder="Pages" required />
           <span class="error" aria-live="polite"></span>
-          <label><input type="checkbox" id="isread" />Read? </label>
+          <div class="checkbox-wrapper">
+            <span class="checkmark"></span>
+            <input type="checkbox" id="isread" />
+            <label for="isread">Read?</label>
+          </div>
           <button type="submit" class="bookbtn">ADD BOOK</button>
           <button type="button" class="close-form">CANCEL</button>
         </fieldset>
