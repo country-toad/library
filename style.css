@@ -89,6 +89,7 @@
   background-color: rgb(219, 135, 25);
   height: 200px;
   width: 150px;
+  text-align: center;
 }
 
 .new-book-form {

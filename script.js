@@ -26,6 +26,9 @@ const titleError = document.querySelector("#title + span.error");
 const authorError = document.querySelector("#author + span.error");
 const pagesError = document.querySelector("#pages + span.error");
 
+addBooktoLibrary("a", "b", 12, true);
+listLibraryBooks();
+
 /*  Functions  */
 function addBooktoLibrary(title, author, pages, isRead) {
   const currentBook = new Book(title, author, pages, isRead);
@@ -48,19 +51,20 @@ function listLibraryBooks() {
     libraryDiv.appendChild(bookDiv);
 
     const bookTitle = document.createElement("p");
-    bookTitle.textContent = book.title;
+    bookTitle.textContent = "Title: " + book.title;
     bookDiv.appendChild(bookTitle);
 
     const bookAuthor = document.createElement("p");
-    bookAuthor.textContent = book.author;
+    bookAuthor.textContent = "Author: " + book.author;
     bookDiv.appendChild(bookAuthor);
 
     const bookPages = document.createElement("p");
-    bookPages.textContent = book.pages;
+    bookPages.textContent = "Pages: " + book.pages;
     bookDiv.appendChild(bookPages);
 
-    const bookIsRead = document.createElement("p");
-    bookIsRead.textContent = book.isRead;
+    const bookIsRead = document.createElement("input");
+    bookIsRead.type = "checkbox";
+    bookIsRead.checked = book.isRead;
     bookDiv.appendChild(bookIsRead);
   });
 }
