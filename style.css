@@ -172,7 +172,7 @@
 }
 
 input[type="checkbox"] {
-  -webkit-appearance: none;
+  appearance: none;
   width: 30px;
   height: 30px;
   background: white;
