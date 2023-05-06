@@ -1,8 +1,18 @@
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
+class Book {
+  constructor(
+    title = "Unknown",
+    author = "Unknown",
+    pages = 0,
+    isRead = false
+  ) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+    this.toggleReadStatus = function () {
+      this.isRead = !this.isRead;
+    };
+  }
 }
 
 /*  Variables  */
@@ -19,11 +29,6 @@ const titleError = document.querySelector("#title + span.error");
 const authorError = document.querySelector("#author + span.error");
 const pagesError = document.querySelector("#pages + span.error");
 const containerDiv = document.querySelector(".container");
-
-addBooktoLibrary("1", "1", 1, true);
-addBooktoLibrary("2", "2", 2, false);
-addBooktoLibrary("3", "3", 3, true);
-listLibraryBooks();
 
 /*  Functions  */
 function addBooktoLibrary(title, author, pages, isRead) {
@@ -67,6 +72,9 @@ function listLibraryBooks() {
     bookDiv.appendChild(bookIsRead);
     const isReadLabel = document.createElement("label");
     isReadLabel.htmlFor = "book-" + i;
+    bookIsRead.addEventListener("click", function () {
+      myLibrary[this.parentElement.dataset.id].toggleReadStatus();
+    });
     bookDiv.appendChild(isReadLabel);
 
     const deleteBookBtn = document.createElement("button");
