@@ -76,7 +76,8 @@ function listLibraryBooks() {
 
     const deleteBookBtn = document.createElement("button");
     deleteBookBtn.type = "button";
-    deleteBookBtn.textContent = "test";
+    deleteBookBtn.textContent = "🗑️ Delete Book";
+    deleteBookBtn.classList.add("delete-book");
     bookDiv.appendChild(deleteBookBtn);
   }
 }
