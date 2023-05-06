@@ -200,21 +200,23 @@ input[type="checkbox"] {
   border-radius: 5px;
   border: 2px solid #555;
   cursor: pointer;
+  display: none;
 }
 
-input[type="checkbox"]:checked {
-  background-color: #abd;
-}
-
-input[type="checkbox"]::after {
-  content: "X";
+input[type="checkbox"] + label[for="isread"]::after {
+  content: "READ";
   position: relative;
   transform: translate(-50%, -50%);
   font-size: 14px;
   font-weight: bold;
-  color: white;
-  /* left: 20px; */
-  left: 8px;
-  top: 5px;
-  pointer-events: none;
+  color: rgb(255, 255, 255);
+}
+
+input[type="checkbox"]:checked + label[for="isread"]::after {
+  content: "UNREAD";
+  position: relative;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
 }
