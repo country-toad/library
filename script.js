@@ -3,13 +3,6 @@ function Book(title, author, pages, isRead) {
   this.author = author;
   this.pages = pages;
   this.isRead = isRead;
-  this.info = function getInfo() {
-    let pageString = "Not read yet";
-    if (isRead) {
-      pageString = "Read";
-    }
-    return `${title}, ${pages} pages, ${pageString}`;
-  };
 }
 
 /*  Variables  */
@@ -140,13 +133,6 @@ function enableOverlay() {
 function disableOverlay() {
   overlayElement.style.display = "none";
 }
-
-// function updateBookValues() {
-//   for (let i = 0; i < myLibrary.length; i++) {
-//     const currentDOMBook = document.querySelector("#book-" + i);
-//     myLibrary[i].isRead = currentDOMBook.checked;
-//   }
-// }
 
 overlayElement.addEventListener("dblclick", disableOverlay);
 closeFormButton.addEventListener("click", disableOverlay);
