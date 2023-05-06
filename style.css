@@ -229,7 +229,7 @@ input[type="checkbox"]:checked + label::after {
 
 button:focus {
   outline: none; /* remove the default outline */
-  box-shadow: 0 0 0 3px rgb(231, 158, 0); /* add a blue box-shadow */
+  box-shadow: 0 0 0 3px rgba(231, 158, 0); /* add a blue box-shadow */
 }
 
 .book-info {
