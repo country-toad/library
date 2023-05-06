@@ -50,6 +50,7 @@ function listLibraryBooks() {
     let book = myLibrary[i];
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("book-container");
+    bookDiv.dataset.id = i;
     libraryDiv.appendChild(bookDiv);
 
     const bookTitle = document.createElement("p");
