@@ -35,6 +35,7 @@ function addBooktoLibrary(title, author, pages, isRead) {
   const currentBook = new Book(title, author, pages, isRead);
   myLibrary.push(currentBook);
 }
+
 // Loops through library arr and displays the values of each book
 function listLibraryBooks() {
   // If library element exists, remove it
@@ -54,14 +55,17 @@ function listLibraryBooks() {
     libraryDiv.appendChild(bookDiv);
 
     const bookTitle = document.createElement("p");
+    bookTitle.classList.add("book-info");
     bookTitle.textContent = "Title: " + book.title;
     bookDiv.appendChild(bookTitle);
 
     const bookAuthor = document.createElement("p");
+    bookAuthor.classList.add("book-info");
     bookAuthor.textContent = "Author: " + book.author;
     bookDiv.appendChild(bookAuthor);
 
     const bookPages = document.createElement("p");
+    bookPages.classList.add("book-info");
     bookPages.textContent = "Pages: " + book.pages;
     bookDiv.appendChild(bookPages);
 

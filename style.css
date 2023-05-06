@@ -26,7 +26,7 @@
   display: flex;
 }
 
-.title,
+.page-title,
 .open-form-container {
   background-color: rgb(112, 66, 20);
 }
@@ -52,7 +52,7 @@
   color: white;
 }
 
-.title {
+.page-title {
   grid-row-start: 1;
   font-size: 50px;
   flex-grow: 1;
@@ -225,4 +225,20 @@ input[type="checkbox"]:checked + label::after {
   justify-self: flex-end;
   margin-top: auto;
   margin-bottom: 8px;
+}
+
+button:focus {
+  outline: none; /* remove the default outline */
+  box-shadow: 0 0 0 3px rgb(231, 158, 0); /* add a blue box-shadow */
+}
+
+.book-info {
+  font-family: (--system-font);
+  font-size: 18px;
+  color: black;
+}
+
+.book-container > p:first-child {
+  margin-top: 8px;
+  /* border: 2px solid red; */
 }
