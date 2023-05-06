@@ -187,7 +187,7 @@
   margin-bottom: 10px;
 }
 
-label[for="isread"] {
+input[type="checkbox"] + label {
   cursor: pointer;
   padding: 5px;
 }
@@ -203,8 +203,8 @@ input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"] + label[for="isread"]::after {
-  content: "READ";
+input[type="checkbox"] + label::after {
+  content: "UNREAD ❌";
   position: relative;
   transform: translate(-50%, -50%);
   font-size: 14px;
@@ -212,8 +212,8 @@ input[type="checkbox"] + label[for="isread"]::after {
   color: rgb(255, 255, 255);
 }
 
-input[type="checkbox"]:checked + label[for="isread"]::after {
-  content: "UNREAD";
+input[type="checkbox"]:checked + label::after {
+  content: "READ ✔️";
   position: relative;
   transform: translate(-50%, -50%);
   font-size: 14px;

@@ -65,7 +65,11 @@ function listLibraryBooks() {
     const bookIsRead = document.createElement("input");
     bookIsRead.type = "checkbox";
     bookIsRead.checked = book.isRead;
+    bookIsRead.id = "isread";
     bookDiv.appendChild(bookIsRead);
+    const isReadLabel = document.createElement("label");
+    isReadLabel.htmlFor = "isread";
+    bookDiv.appendChild(isReadLabel);
   });
 }
 
