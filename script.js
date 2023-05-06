@@ -73,6 +73,11 @@ function listLibraryBooks() {
     const isReadLabel = document.createElement("label");
     isReadLabel.htmlFor = "book-" + i;
     bookDiv.appendChild(isReadLabel);
+
+    const deleteBookBtn = document.createElement("button");
+    deleteBookBtn.type = "button";
+    deleteBookBtn.textContent = "test";
+    bookDiv.appendChild(deleteBookBtn);
   }
 }
 
