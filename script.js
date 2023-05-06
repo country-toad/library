@@ -27,7 +27,9 @@ const authorError = document.querySelector("#author + span.error");
 const pagesError = document.querySelector("#pages + span.error");
 const containerDiv = document.querySelector(".container");
 
-addBooktoLibrary("a", "b", 12, true);
+addBooktoLibrary("1", "1", 1, true);
+addBooktoLibrary("2", "2", 2, false);
+addBooktoLibrary("3", "3", 3, true);
 listLibraryBooks();
 
 /*  Functions  */
@@ -78,6 +80,10 @@ function listLibraryBooks() {
     deleteBookBtn.type = "button";
     deleteBookBtn.textContent = "🗑️ Delete Book";
     deleteBookBtn.classList.add("delete-book");
+    deleteBookBtn.addEventListener("click", function () {
+      myLibrary.splice(this.parentElement.dataset.id, 1);
+      listLibraryBooks();
+    });
     bookDiv.appendChild(deleteBookBtn);
   }
 }
